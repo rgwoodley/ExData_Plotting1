@@ -1,3 +1,9 @@
+## Additions
+The files plot1.R, plot2.R, plot3.R and plot4.R contain code to produce the associated files plot1.png..plot4.png.
+
+The plots are created from a subset of the original dataset for the days Feburary 1, 2007 and Feburary 2, 2007 ONLY.
+The script createSubset, creates the the partition of the dataset so that the plot(N) functions are able to run and create the necessary plots.
+
 ## Introduction
 
 This assignment uses data from
