@@ -1,6 +1,11 @@
+######################################################################################################## 
+## plot1 - Create Histogram and create png file with output
+##
+## Author: Woodley, R.
+######################################################################################################## 
 plot1 <- function() {
   
-  # Open Device name plot1.png"
+  # Open Device name plot1.png
   png("plot1.png")
   
   # Create historgram

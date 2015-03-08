@@ -1,5 +1,10 @@
+######################################################################################################## 
+## plot3 - Create plot and create png file with output
+##
+## Author: Woodley, R.
+######################################################################################################## 
 plot3 <- function() {
-  # Open Device name plot1.png"
+  # Open Device name plot3.png"
   png("plot3.png")
   
   with(hpcsub, plot(DateTime, Sub_metering_3, type='n',  ylab="Energy sub metering", xlab='', ylim=c(0,38)))
