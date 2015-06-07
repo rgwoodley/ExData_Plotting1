@@ -3,14 +3,28 @@
 ##
 ## Author: Woodley, R.
 ########################################################################################## 
+createSubset <- function() {
+  # Read Power consumption data
+  hpc <- read.csv("household_power_consumption.txt", sep=";", na.strings="?")
+  
+  # Convert Date and Time to Posix format
+  hpc$DateTime <- strptime(paste0(hpc$Date,' ',hpc$Time), '%d/%m/%Y %H:%M:%OS')
+  
+  # Create subset of dataset for the dates 02/01/2007 and -2/02/2007
+  hpcsub <- hpc[format(hpc$DateTime, "%Y%m%d") == '20070201' | format(hpc$DateTime, "%Y%m%d") == '20070202',]
+  
+}
 plot4 <- function() {
+  # Create subset of date
+  hpcsub <- createSubset()
+
   # Open Device name plot4.png"
   png("plot4.png")
   
   par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0)) 
 
   with(hpcsub, {
-    plot(DateTime, Global_active_power, type='l', ylab="Global Activity Power", xlab="")
+    plot(DateTime, Global_active_power, type='l', ylab="Global Active Power", xlab="")
     plot(DateTime, Voltage, type='l', ylab="Voltage", xlab="datatime")
     
     
